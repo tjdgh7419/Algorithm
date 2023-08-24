@@ -1,6 +1,6 @@
 public class Solution {
     public int solution(int num) {
-        int num1 = num;
+            long num1 = num;
 			int answer = 0;
 			while (num1 != 1)
 			{
@@ -13,7 +13,7 @@ public class Solution {
 					num1 = (num1 * 3) + 1;
 				}
 				answer++;
-				if(answer == 480)
+				if(answer == 500)
 				{
 					return -1;
 				}
