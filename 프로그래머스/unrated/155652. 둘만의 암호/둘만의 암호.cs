@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
-public class Solution {
-    public string solution(string s, string skip, int index) {
-    	string answer = "";
+public class Solution
+{
+	public string solution(string s, string skip, int index)
+	{
+		string answer = "";
 		int cnt = 0;
 		int plus = 1;
 		int val = 0;
@@ -41,5 +43,6 @@ public class Solution {
 			answer += (char)val;
 		}
         return answer;
-    }
+	}
 }
+
