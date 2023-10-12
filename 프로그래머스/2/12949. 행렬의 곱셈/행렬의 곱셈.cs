@@ -4,7 +4,7 @@ using System.Linq;
 
 public class Solution {
     public int[,] solution(int[,] arr1, int[,] arr2) {
-        int[,] answer = new int[arr1.GetLength(0),arr2.GetLength(1)];
+       int[,] answer = new int[arr1.GetLength(0),arr2.GetLength(1)];
 		List<int> ans = new List<int>();
 		int a1 = 0;
 		int a2 = 0;
