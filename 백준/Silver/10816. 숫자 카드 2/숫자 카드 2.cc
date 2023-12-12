@@ -1,7 +1,5 @@
 #include <iostream>
-#include <vector>
 #include <algorithm>
-#include <unordered_map>
 
 using namespace std;
 
@@ -11,25 +9,26 @@ int main()
 	cin.tie(0);
 
 	int n = 0;
-	int m2 = 0;
+	int m = 0;
 	int nVal = 0;
-	int mVal = 0;
+	
+	int arr[500002];
 	
 	cin >> n;
-
-	unordered_map<int, int> m;	
 
 	for (int i = 0; i < n; i++)
 	{
 		cin >> nVal;
-		m[nVal]++;
+		arr[i] = nVal;
 	}
 
-	cin >> m2;
+	sort(arr, arr + n);
 
-	for (int i = 0; i < m2; i++)
+	cin >> m;
+
+	for (int i = 0; i < m; i++)
 	{
-		cin >> mVal;
-		cout << m[mVal] << " ";
+		cin >> nVal;
+		cout << upper_bound(arr, arr + n, nVal) - lower_bound(arr, arr + n, nVal) << " ";
 	}		
 }
