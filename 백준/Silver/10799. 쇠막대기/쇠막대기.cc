@@ -31,22 +31,14 @@ int main()
 			sum += 1;
 			prev = comp;
 		}
-		else if (prev == '(' && comp == ')')
-		{
-			rCnt++;
-			prev = comp;
-		}
-		else if (prev == ')' && comp == ')')
-		{
-			rCnt++;
-			prev = comp;
-		}
+
 		else if (prev == ')' && comp == '(')
 		{
 			rCnt--;
 			sum += rCnt;		
 			prev = comp;
 		}
+
 		else {
 			rCnt++;
 			prev = comp;
