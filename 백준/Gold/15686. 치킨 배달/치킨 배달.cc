@@ -10,7 +10,7 @@ using namespace std;
 
 int arr[51][51];
 int n, m = 0;
-int res = 999999;
+int res = 2501;
 vector<pair<int, int>> peo;
 vector<pair<int, int>> chi;
 vector<int> sel;
@@ -20,7 +20,7 @@ void get_val()
 	int g_res = 0;
 	for (int i = 0; i < peo.size(); i++)
 	{
-		int mindis = 999999;
+		int mindis = 2501;
 		int dis = 0;
 		for (int j = 0; j < sel.size(); j++)
 		{
