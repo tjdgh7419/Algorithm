@@ -10,7 +10,6 @@
 using namespace std;
 
 int arr[100001];
-int dp[100001];
 
 int main()
 {
@@ -25,11 +24,7 @@ int main()
 	for (int i = 1; i <= n; i++)
 	{
 		cin >> arr[i];
-	}
-
-	for (int i = 1; i <= n; i++)
-	{
-		dp[i] = dp[i - 1] + arr[i];
+		arr[i] += arr[i - 1];
 	}
 
 	for (int i = 0; i < m; i++)
@@ -37,6 +32,6 @@ int main()
 		int start, end;
 		cin >> start >> end;
 
-		cout << dp[end] - dp[start - 1] << '\n';
+		cout << arr[end] - arr[start - 1] << '\n';
 	}
 }
