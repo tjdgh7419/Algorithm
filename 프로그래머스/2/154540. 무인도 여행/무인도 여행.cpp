@@ -17,6 +17,7 @@ int BFS(int x, int y, vector<string> map)
 {
     queue<pair<int, int>>q;
     int res = 0;
+
     res += map[x][y] - '0';
     visit[x][y] = true;
     q.push({x, y});
@@ -58,9 +59,11 @@ vector<int> solution(vector<string> maps) {
             }
         }
     }
-    if (!bfs_chk)
+
+    if (!bfs_chk) 
     {
         answer.push_back(-1);
+        return answer;
     }
     sort(answer.begin(), answer.end());
     return answer;
