@@ -24,7 +24,7 @@ int main()
 		cin >> n;
 		if (n == 0) break;
 
-		memset(graph, 0, sizeof(graph));
+	
 
 		for (int i = 0; i < n; i++)
 		{
