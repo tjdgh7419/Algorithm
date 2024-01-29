@@ -9,8 +9,8 @@
 #include <cstdio>
 
 using namespace std;
-int square[1002][1002];
-int dp[1002][1002];
+int square[1001][1001];
+int dp[1001][1001];
 
 int main()
 {
@@ -48,3 +48,4 @@ int main()
 
 	cout << MAX_length * MAX_length;
 }
+
