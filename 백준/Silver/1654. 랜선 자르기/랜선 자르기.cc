@@ -10,6 +10,7 @@
 
 using namespace std;
 long lan[10001];
+
 int main()
 {
 	ios::sync_with_stdio(false);
@@ -19,6 +20,7 @@ int main()
 	long k, n, ans = 0;
 	long start = 1;
 	long end = 0;
+
 	cin >> k >> n;
 
 	for (int i = 0; i < k; i++)
@@ -26,9 +28,6 @@ int main()
 		cin >> lan[i];
 		end = max(end, lan[i]);
 	}
-
-	sort(lan, lan + k);
-
 
 	while (start <= end)
 	{
@@ -50,5 +49,8 @@ int main()
 			end = mid - 1;
 		}
 	}
+
 	cout << ans;
 }
+
+
