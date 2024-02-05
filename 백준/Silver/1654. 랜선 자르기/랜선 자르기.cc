@@ -17,18 +17,18 @@ int main()
 	cout.tie(0);
 
 	long k, n, ans = 0;
-
+	long start = 1;
+	long end = 0;
 	cin >> k >> n;
 
 	for (int i = 0; i < k; i++)
 	{
 		cin >> lan[i];
+		end = max(end, lan[i]);
 	}
 
 	sort(lan, lan + k);
 
-	long start = 0;
-	long end = lan[k - 1];
 
 	while (start <= end)
 	{
@@ -37,11 +37,6 @@ int main()
 
 		for (int i = 0; i < k; i++)
 		{
-			if (mid == 0)
-			{
-				sum = LONG_MAX;
-				break;
-			}
 			sum += lan[i] / mid;
 		}
 
