@@ -29,8 +29,9 @@ int main()
 	for (int i = 0; i < N; i++)
 	{
 		cin >> snack[i];
-		end = max(end, snack[i]);
 	}
+
+	end = *max_element(snack, snack+N);
 
 	while (start <= end)
 	{
