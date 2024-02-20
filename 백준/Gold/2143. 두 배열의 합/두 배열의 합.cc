@@ -10,57 +10,69 @@
 
 using namespace std;
 
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
+int main()
+{
+	ios::sync_with_stdio(false);
+	cin.tie(0);
+	cout.tie(0);
 
-    long long T, n, m, ans = 0;
-    cin >> T >> n;
+	int T, n, m;
+	long long ans = 0;
 
-    // Read array A
-    vector<long long> n_arr(n);
-    for (int i = 0; i < n; i++) {
-        cin >> n_arr[i];
-    }
+	cin >> T >> n;
 
-    cin >> m;
+	vector<int>n_vec(n);
+	
+	for (int i = 0; i < n; i++)
+	{
+		cin >> n_vec[i];
+	}
 
-    // Read array B
-    vector<long long> m_arr(m);
-    for (int i = 0; i < m; i++) {
-        cin >> m_arr[i];
-    }
+	cin >> m;
 
-    // Calculate subarray sums for arrays A and B
-    vector<long long> n_sums, m_sums;
-    for (int i = 0; i < n; i++) {
-        long long sum = 0;
-        for (int j = i; j < n; j++) {
-            sum += n_arr[j];
-            n_sums.push_back(sum);
-        }
-    }
-    for (int i = 0; i < m; i++) {
-        long long sum = 0;
-        for (int j = i; j < m; j++) {
-            sum += m_arr[j];
-            m_sums.push_back(sum);
-        }
-    }
+	vector<int>m_vec(m);
 
-    // Sort the sums of array B
-    sort(m_sums.begin(), m_sums.end());
+	for (int i = 0; i < m; i++)
+	{
+		cin >> m_vec[i];
+	}
 
-    // Count valid pairs
-    for (int i = 0; i < n_sums.size(); i++) {
-        long long target = T - n_sums[i];
-        auto lower = lower_bound(m_sums.begin(), m_sums.end(), target);
-        auto upper = upper_bound(m_sums.begin(), m_sums.end(), target);
-        ans += (upper - lower);
-    }
+	vector<long long>n_sum, m_sum;
 
-    cout << ans << endl;
+	for (int i = 0; i < n; i++)
+	{
+		long long sum = 0;
+		for (int j = i; j < n; j++)
+		{
+			sum += n_vec[j];
+			n_sum.push_back(sum);
+		}
+	}
 
-    return 0;
+	for (int i = 0; i < m; i++)
+	{
+		long long sum = 0;
+		for (int j = i; j < m; j++)
+		{
+			sum += m_vec[j];
+			m_sum.push_back(sum);
+		}
+	}
+
+	sort(m_sum.begin(), m_sum.end());
+
+	for (int i = 0; i < n_sum.size(); i++)
+	{
+		int target = T - n_sum[i];
+		
+		auto lower = lower_bound(m_sum.begin(), m_sum.end(), target);
+		auto upper = upper_bound(m_sum.begin(), m_sum.end(), target);
+		ans += (upper - lower);
+	}
+
+	cout << ans;
 }
+
+
+
+
