@@ -11,7 +11,7 @@
 using namespace std;
 
 long long liq[5001];
-long long ans[3];
+int ans[3];
 
 int main()
 {
@@ -54,5 +54,3 @@ int main()
 
 	cout << ans[0] << " " << ans[1] << " " << ans[2];
 }
-
-
