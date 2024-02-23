@@ -10,10 +10,10 @@
 
 using namespace std;
 
-long long A[4001];
-long long B[4001];
-long long C[4001];
-long long D[4001];
+int A[4001];
+int B[4001];
+int C[4001];
+int D[4001];
 
 int main()
 {
@@ -21,17 +21,17 @@ int main()
 	cin.tie(0);
 	cout.tie(0);
 	
-	long long n;
+	int n;
 	long long ans = 0;
 
 	cin >> n;
 
-	vector<long long>left_val;
-	vector<long long>right_val;
+	vector<int>left_val;
+	vector<int>right_val;
 
 	for (int i = 0; i < n; i++)
 	{
-		long long a, b, c, d;
+		int a, b, c, d;
 		cin >> a >> b >> c >> d;
 
 		A[i] = a;
@@ -55,13 +55,13 @@ int main()
 			right_val.push_back(C[i] + D[j]);
 		}
 	}
-
+	sort(left_val.begin(), left_val.end());
 	sort(right_val.begin(), right_val.end());
 
 	for (int i = 0; i < left_val.size(); i++)
 	{
-		auto upper = upper_bound(right_val.begin(), right_val.end(), -left_val[i]);
-		auto lower = lower_bound(right_val.begin(), right_val.end(), -left_val[i]);
+		int upper = upper_bound(right_val.begin(), right_val.end(), -left_val[i]) - right_val.begin();
+		int lower = lower_bound(right_val.begin(), right_val.end(), -left_val[i]) - right_val.begin();
 
 		ans += (upper - lower);
 	}
