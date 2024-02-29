@@ -19,7 +19,7 @@ int main()
 	cout.tie(0);
 
 	int N, M;
-	int ans = 0x7fffffff;
+	int ans = INT_MAX;
 	cin >> N >> M;
 
 
