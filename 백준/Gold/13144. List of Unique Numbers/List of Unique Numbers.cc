@@ -22,7 +22,7 @@ int main()
 	
 	int N;
 	int end = 0;
-	long long res = 0;
+	long res = 0;
 	cin >> N;
 	
 	for (int i = 0; i < N; i++)
