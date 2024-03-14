@@ -12,7 +12,6 @@
 using namespace std;
 vector<pair<int, int>> parent(100001);
 
-int tree_node = -1;
 int right_node = -1;
 
 void inorder(int node, bool flag)
@@ -21,7 +20,7 @@ void inorder(int node, bool flag)
 
 	int left = parent[node].first;
 	int right = parent[node].second;
-	tree_node++;
+
 	inorder(left, 0);
 
 	if (flag == 1)
@@ -54,5 +53,7 @@ int main()
 	}
 
 	inorder(1, 1);
-	cout << (tree_node * 2) - right_node;
+	cout << ((N - 1) * 2) - right_node;
 }
+
+
