@@ -20,7 +20,7 @@ int main() {
 	cout.tie(0);
 
 	deque<int> dq;
-	int N, M, left = 0, right = 0, ans = 0;
+	int N, M, left = 0, idx = 0, ans = 0;
 	cin >> N >> M;
 
 	for (int i = 1; i <= N; i++)
@@ -37,13 +37,12 @@ int main() {
 		{
 			if (dq[j] == loc)
 			{
-				left = j;
-				right = dq.size() - left - 1;
+				idx = j;
 				break;
 			}
 		}
 
-		if (left <= right)
+		if (idx <= dq.size() / 2)
 		{
 			while (true)
 			{
@@ -52,26 +51,23 @@ int main() {
 					dq.pop_front();
 					break;
 				}
-
+				++ans;
 				dq.push_back(dq.front());
 				dq.pop_front();
-				ans++;
 			}
 		}
 		else
-		{
-			ans++;
+		{	
 			while (true)
 			{
-				if (dq.back() == loc)
+				if (dq.front() == loc)
 				{
-					dq.pop_back();
+					dq.pop_front();
 					break;
 				}
-
+				++ans;
 				dq.push_front(dq.back());
 				dq.pop_back();
-				ans++;
 			}
 		}
 	}
