@@ -24,7 +24,7 @@ int main() {
 	while (T--)
 	{
 		deque<string>dq;
-		string p, x, str = "", ans = "";
+		string p, x, str = "";
 		bool er = false, rev = false;
 		cin >> p >> n >> x;
 
@@ -69,24 +69,26 @@ int main() {
 		{
 			cout << "[";
 
-			if (rev && !dq.empty()) {
-				for (auto o = dq.rbegin(); o != dq.rend(); o++) {
-					if (o == dq.rend() - 1)
-						cout << *o;
+			if (rev) 
+			{
+				for (auto i = dq.rbegin(); i != dq.rend(); i++) {
+					if (i == dq.rend() - 1)
+						cout << *i;
 					else
-						cout << *o << ',';
+						cout << *i << ',';
 				}
 			}
-			else if (!rev && !dq.empty()) {
-				for (auto o = dq.begin(); o != dq.end(); o++) {
-					if (o == dq.end() - 1)
-						cout << *o;
+			else 
+			{
+				for (auto i = dq.begin(); i != dq.end(); i++) {
+					if (i == dq.end() - 1)
+						cout << *i;
 					else
-						cout << *o << ',';
+						cout << *i << ',';
 				}
 			}
 			
-			cout << ans + "]" << '\n';
+			cout << "]" << '\n';
 		}
 	}
 }
